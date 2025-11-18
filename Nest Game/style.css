@@ -22,15 +22,16 @@ body{
     }
     .lang {
         text-align: center;
-        width: 4rem;
+        width: 5rem;
         height: 3rem;
         border: 1px solid #8E90B2;
         border-radius: 1rem;
         background-color: antiquewhite;
     }
     .lang p {
-    font-size: 1rem
-    
+        margin-top: 9px;
+        font-size: 25px;
+
     }
     .nav-search input {
         margin: 0;
