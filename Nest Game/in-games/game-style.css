@@ -24,7 +24,7 @@ body{
         display: flex;
         position: relative;
         padding-left: 2rem;
-        width: 40rem;
+        width: 29rem;
     }
     .lang {
         text-align: center;
@@ -98,38 +98,6 @@ body{
     font-size: 4rem;
     color: black;
     padding-left: 2rem;
-}
-.contor {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    margin: 0 auto;
-    width: auto;
-    height: 40rem;
-
-    .show {
-        display: flex;
-        margin: 1rem auto;
-        height: 35rem;
-        width: 63rem;
-        text-align: center;
-
-    }
-
-    .show img {
-        margin: 0 auto;
-        text-align: center;
-        border-radius: 1rem;
-        height: 33rem;
-        width: 100%;
-    }
-
-    .show button {
-        margin: 15rem auto;
-        position: unset;
-        height: 5rem;
-        width: 5rem;
-    }
 }
 /*หน้า ผู้เล่นเดี่ยว*/
 
