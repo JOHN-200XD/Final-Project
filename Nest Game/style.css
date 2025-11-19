@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Headline:wght@200..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Headline:wght@200..700&display=swap");
 
 body{
 <<<<<<< HEAD
     margin: auto;
     font-family: "Noto Sans Thai", sans-serif;
 =======
-
+    margin: 0 auto;
 >>>>>>> 98f394562b7ca32e8d30653ea4f1b96728b1f8bf
 } /* navbar ตัวแถบค้นหา */
 .nav-bar{
@@ -64,109 +64,345 @@ body{
         font-size: 2.3rem;
     }
 }
+
 .nav-2 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 5.4rem;
+  max-width: auto;
+  gap: 1rem;
+  padding-left: 4.8rem;
+  text-align: center;
+  background-color: #8e90b2;
+
+  .nav-manu-info {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
-    height: 5.4rem;
-    max-width: auto;
-    gap: 1rem;
-    padding-left:4.8rem ;
+    gap: 2rem;
+    padding-right: 3rem;
+  }
+
+  .nav-manu-info p {
+    font-size: 23px;
+  }
+
+  .nav-manu {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    height: 1rem;
+    width: 5rem;
+    padding: 1rem;
+    align-items: center;
     text-align: center;
-    background-color: #8E90B2;
-    .nav-manu-info {
-        display: flex;
-        justify-content: space-between;
-        gap: 2rem ;
-        padding-right: 3rem;
-    }
-    .nav-manu-info p {
-        font-size: 23px;
-    }
-    .nav-manu {
-        display: flex;
-        align-items: center;
-        margin: 1rem;
-        height: 1rem;
-        width: 5rem;
-        padding: 1rem;
-        align-items: center;
-        text-align: center;
-        border: 1px solid #be7d7d;
-        border-radius: 1rem;
-        background-color: antiquewhite;
-    }
+    border: 1px solid #be7d7d;
+    border-radius: 1rem;
+    background-color: antiquewhite;
+  }
 }
-<<<<<<< HEAD
+
+/* ================= FOOTER ================= */
+.footer {
+  background-color: #5b5b5b;
+  color: white;
+  padding: 2rem 3rem;
+  font-size: 1.7rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.footer-left,
+.footer-right {
+  width: 50%;
+}
+
+/* ===== LOGO + TEXT SIDE BY SIDE ===== */
+.footer-contract-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-right: 1rem;
+  border-right: 1px solid #ccc;
+  margin-right: 2rem;
+  text-align: left;
+}
+
+.footer-logo {
+  width: 250px;
+  height: auto;
+  margin: 0;
+}
+
+.footer-description {
+  margin-bottom: 15rem;
+  line-height: 1.6;
+}
+
+/* Icons */
+.payment-icons,
+.contact-icons {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.payment-icon {
+  width: 40px;
+  height: 25px;
+  background-color: #5a5a5a;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
+.circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+.footer-copy {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ccc;
+  margin-top: 2rem;
+}
+.footer-contract-section {
+  text-align: left;
+  padding-right: 1rem;
+  border-right: 1px solid #ccc;
+  margin-right: 2rem;
+  height: 20rem;
+}
 
 .header-best-seller {
-    font-size: 4rem;
-    color: black;
-    padding-left: 2rem;
+  font-size: 4rem;
+  color: black;
+  padding-left: 2rem;
 }
 
-=======
-/*หน้า ผู้เล่นเดี่ยว*/
->>>>>>> 98f394562b7ca32e8d30653ea4f1b96728b1f8bf
-.list-product-sell {
+.contor {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+  width: auto;
+  height: 40rem;
+
+  .show {
+    display: flex;
     margin: 1rem auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    height: 35rem;
+    width: 63rem;
     text-align: center;
+  }
+
+  .show img {
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 1rem;
+    height: 33rem;
+    width: 100%;
+  }
+
+  .show button {
+    margin: 15rem auto;
+    position: unset;
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+/*หน้า ผู้เล่นเดี่ยว*/
+
+.list-product-sell {
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  text-align: center;
 }
 
 .product-name {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
-
 
 .list-product-sell {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem; 
-    padding: 1rem;
+  display: inline-block;
+  text-align: center;
 }
-
 
 .container {
-    background: #f7f7f7;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15); 
-    text-align: center;
-    width: 100%;
-    max-width: 300px;
-    margin: auto;
+  display: block;
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 20rem;
+  margin: 1rem 1rem;
 }
 
-
-.container img {
-    width: 100%;
-    border-radius: 10px;
+.container-1 {
+  position: relative;
+  display: block;
+  margin: 0rem 3rem;
+  align-items: center;
+  text-align: center;
 }
 
-.buy-item {
-    margin-top: 1rem;
-    padding: 0.5rem;
-    background: #8E90B2;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
+.wap-in {
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  margin: 0.5rem 0.5rem;
+  height: 37rem;
+  width: 18rem;
+  padding-top: 0rem;
+  border-radius: 1rem;
+  background-color: rgb(230, 190, 190);
 }
 
-.buy-item:hover {
-    background: #6d6f93;
+.wap-in h5 {
+  margin-top: 0;
+  font-size: 1.1rem;
 }
 
-.price {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.4rem; 
+.pen {
+  margin: auto;
+  position: relative;
 }
 
-.price p {
+.pen img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+
+/* ===== LOGO + TEXT SIDE BY SIDE ===== */
+.footer-contract-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-right: 1rem;
+  border-right: 1px solid #ccc;
+  margin-right: 2rem;
+  text-align: left;
+}
+
+.footer-logo {
+  width: 250px;
+  height: auto;
+  margin: 0;
+}
+
+.footer-description {
+  margin-bottom: 15rem;
+  line-height: 1.6;
+}
+
+/* Icons */
+.payment-icons,
+.contact-icons {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.payment-icon {
+  width: 40px;
+  height: 25px;
+  background-color: #5a5a5a;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+
+.circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+.footer-copy {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ccc;
+  margin-top: 2rem;
+}
+.footer-contract-section {
+  text-align: left;
+  padding-right: 1rem;
+  border-right: 1px solid #ccc;
+  margin-right: 2rem;
+  height: 20rem;
+}
+
+<<<<<<< HEAD
+.login:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+=======
+html, body {
+    height: 100%;
     margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+>>>>>>> 71ff325af5e4d03fc8651877d5dc88d944021b34
+}
+
+#loginPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#loginBox {
+  background: white;
+  padding: 20px;
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: 0.2s ease;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+  color: #444;
+  transition: 0.2s;
+}
+
+#closeBtn:hover {
+  color: red;
+  transform: scale(1.2);
 }
