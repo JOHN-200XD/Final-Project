@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Headline:wght@200..700&display=swap');
 
 body {
-    margin: auto;
     font-family: "Noto Sans Thai", sans-serif;
     margin: 0 auto;
     background-color: rgb(47, 47, 91);
@@ -14,10 +13,11 @@ body {
     margin: 0 auto;
     height: 7.5rem;
     max-width: auto;
+    text-align: center;
     align-items: center;
     background-color: #D9D9D9;
-    gap: 3rem;
-    padding-right: 3rem;
+    gap: 1rem;
+    padding-right: 5rem;
 
     .icon img {
         padding-left: 4rem;
@@ -185,36 +185,6 @@ body {
     margin-right: 2rem;
     height: 20rem;
 }
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-main.content {
-    flex: 1;           /* ดัน footer ลงล่างอัตโนมัติ */
-    
-}
-
-header, .navbar, .topbar {
-    height: auto !important;
-    padding: 8px 0 !important;
-}
-
-header * {
-    max-height: 60px;
-}
-
-.navbar img {
-    max-height: 40px;
-    height: auto;
-}
-
-
 
 .header-best-seller {
     font-size: 4rem;
@@ -324,7 +294,63 @@ header * {
 
 }
 
+/* ===== LOGO + TEXT SIDE BY SIDE ===== */
+.footer-contract-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding-right: 1rem;
+    border-right: 1px solid #ccc;
+    margin-right: 2rem;
+    text-align: left;
+}
 
-    
+.footer-logo {
+    width: 250px;
+    height: auto;
+    margin: 0;
+}
+
+.footer-description {
+    margin-bottom: 15rem;
+    line-height: 1.6;
+}
+
+/* Icons */
+.payment-icons, .contact-icons {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.payment-icon {
+    width: 40px;
+    height: 25px;
+    background-color: #5a5a5a;
+    border: 1px solid #999;
+    border-radius: 3px;
+}
+
+.circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+}
+
+.footer-copy {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ccc;
+    margin-top: 2rem;
+}
+.footer-contract-section {
+    text-align: left;
+    padding-right: 1rem;
+    border-right: 1px solid #ccc;
+    margin-right: 2rem;
+    height: 20rem;
+}
+
 
 
