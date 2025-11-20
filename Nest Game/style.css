@@ -441,10 +441,6 @@ body {
 }
 
 /* phoom signin */
-.signin:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
 
 #signinPopup {
   position: fixed;
@@ -489,6 +485,43 @@ body {
   transform: scale(1.2);
 }
 
+#signinBox input[type="text"],
+#signinBox input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+#signinBox input[type="text"]:focus,
+#signinBox input[type="password"]:focus {
+  border-color: #7a5ce7;
+  box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
+  outline: none;
+}
+
+#signinBox h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+#signinBox button {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 10px;
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
 /* หัวข้อ */
 #loginBox h3 {
   font-size: 2rem;
@@ -531,4 +564,8 @@ body {
 
 #loginBox button:hover {
   background-color: #341f97;
+}
+
+a{
+  text-decoration: none;
 }
