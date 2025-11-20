@@ -21,7 +21,7 @@ function netx() {
   if (num >= pg.length) num = 0;
   show();
 }
-
+// login by mon //
 const loginIcon = document.querySelector(".login");
 const loginPopup = document.getElementById("loginPopup");
 const loginBox = document.getElementById("loginBox");
