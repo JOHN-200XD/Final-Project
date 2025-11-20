@@ -50,3 +50,33 @@ function closeLogin() {
     loginPopup.style.display = "none";
   }, 200);
 }
+// sing in phoom
+const signinIcon = document.querySelector(".signin");
+const signinPopup = document.getElementById("signinPopup");
+const signinBox = document.getElementById("signinBox");
+const closepop = document.getElementById("closepop");
+
+signinIcon.addEventListener("click", () => {
+  signinPopup.style.display = "flex";
+    loginPopup.style.display = "none";
+
+  setTimeout(() => {
+    signinBox.style.opacity = "1";
+    signinBox.style.transform = "translateY(0)";
+  }, 10);
+});
+
+closepop.addEventListener("click", closesignin);
+
+signinPopup.addEventListener("click", (f) => {
+  if (f.target === signinPopup) closesignin();
+});
+
+function closesignin() {
+  signinBox.style.opacity = "0";
+  signinBox.style.transform = "translateY(-15px)";
+
+  setTimeout(() => {
+    signinPopup.style.display = "none";
+  }, 200);
+}
