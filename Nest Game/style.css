@@ -188,9 +188,11 @@ body {
 }
 
 .header-best-seller {
-  font-size: 4rem;
-  color: black;
-  padding-left: 2rem;
+  font-size: 2rem;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: left;
 }
 
 .contor {
@@ -288,7 +290,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 98%;
+  height: 98.4%;
   width: 100%;
   background-color: #000000;
   transition: 0.8ms ease;
