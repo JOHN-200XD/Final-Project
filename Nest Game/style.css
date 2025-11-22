@@ -4,7 +4,7 @@ body {
   margin: auto;
   font-family: "Noto Sans Thai", sans-serif;
   background: linear-gradient(to bottom, #653d80 0%, #693581 100%);
-
+}
 /* navbar ตัวแถบค้นหา */
 .nav-bar {
   display: flex;
@@ -438,7 +438,7 @@ nav li{
   outline: none;
 }
 
-#loginBox button {
+#loginBox button{
   width: 100%;
   padding: 10px 0;
   margin-top: 10px;
@@ -455,7 +455,7 @@ nav li{
   background-color: #341f97;
 }
 
-a{
+a {
   text-decoration: none;
 }
 

@@ -21,7 +21,7 @@ hr {
 
 /* กล่องนโยบาย */
 .all{
-    width: 85%;
+    width: 60%;
     background-color: white;
     border-radius: 0.5%;
     border: solid rgb(105, 105, 105) 5px;
@@ -37,7 +37,7 @@ h2 header-text {
     margin-top: 200px;
 }
 
-.h2, h3 {
+.h2, .h3 {
     font-size: 1.5rem;
 }
 
@@ -88,4 +88,12 @@ img{
 
 .end a {
     color: white;
+}
+
+.footer-copy {
+  text-align: center;
+  padding-top: 1.2rem;
+  border-top: 1px solid;
+  margin-top: 1rem;
+  font-size: 1rem;
 }
