@@ -126,7 +126,7 @@ nav li{
   background-color: transparent; /* ทำให้พื้นหลังโปร่งใส */
   color: white;
   padding: 1rem 3rem;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(6px);
 }
 
 .footer-container {
