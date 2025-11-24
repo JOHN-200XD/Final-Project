@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Headline:wght@200..700&display=swap");
 
 body {
-  margin: auto;
+  margin: 0 auto;
   font-family: "Noto Sans Thai", sans-serif;
   background: url("img/art\ pixel\ GIF.gif") no-repeat;
   background-size: cover;
@@ -21,7 +21,7 @@ body {
   padding-right: 3rem;
   position: sticky;
   top: 0;
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .icon img {
@@ -31,7 +31,7 @@ body {
 }
 
 .imgin {
-  margin: auto; 
+  margin: auto;
   display: flex;
 }
 
@@ -138,7 +138,8 @@ nav li {
 
 /* ================= FOOTER ================= */
 .footer {
-  background-color: transparent; /* ทำให้พื้นหลังโปร่งใส */
+  background-color: transparent;
+  /* ทำให้พื้นหลังโปร่งใส */
   color: white;
   padding: 1rem 3rem;
   backdrop-filter: blur(6px);
@@ -341,6 +342,7 @@ nav li {
   opacity: 0;
 }
 
+
 #by {
   margin-bottom: 20px;
   background-color: #f0f0f0;
@@ -349,7 +351,10 @@ nav li {
   width: 60px;
   transition: 0.3s ease;
   border: 1px solid black;
+  text-align: center;
 }
+
+
 
 #by:hover {
   background-color: #5ce7af;
@@ -578,5 +583,5 @@ a {
 }
 
 .discount {
-    color: red;
+  color: red;
 }
