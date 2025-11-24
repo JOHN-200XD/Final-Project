@@ -127,3 +127,24 @@ function bt() {
     }
   });
 }
+
+
+const PRODUCTS = {
+    "123": {
+        name: "Age of Mythology: Retold",
+        price: 495,
+        originalPrice: 990,
+        discount: "50%"
+    },
+
+    "124": { 
+        name: "Another Game", 
+        price: 700, 
+        originalPrice: 1000, 
+        discount: "30%" 
+    }
+};
+
+let shoppingCart = []; 
+
+// -----------------------------------------------------------

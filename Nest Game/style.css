@@ -168,6 +168,15 @@ nav li {
   text-align: left;
 }
 
+.contact-icons {
+  gap: 1.5rem;
+  font-size: 2rem;
+}
+
+.contact-icons a {
+  color: white;
+}
+
 .footer-logo {
   width: 300px;
 }
