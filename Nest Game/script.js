@@ -189,3 +189,24 @@ function addToCart(id, name, price) {
 function goToCart() {
   window.location.href = "cart.html"; // ชื่อไฟล์ตะกร้าสินค้า
 }
+
+const logo = document.querySelector(".icon img");
+
+logo.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+const contactLink = document.querySelector('a[href="#end"]');
+
+contactLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  const footer = document.getElementById("end");
+
+  footer.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+});
