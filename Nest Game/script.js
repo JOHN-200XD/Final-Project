@@ -38,7 +38,7 @@ if (loginSubmit) {
 
 loginIcon.addEventListener("click", () => {
   loginPopup.style.display = "flex";
-  
+
   setTimeout(() => {
     loginBox.style.opacity = "1";
     loginBox.style.transform = "translateY(0)";
@@ -73,7 +73,7 @@ if (signinSubmit) {
 
 signinIcon.addEventListener("click", () => {
   signinPopup.style.display = "flex";
-    loginPopup.style.display = "none";
+  loginPopup.style.display = "none";
 
   setTimeout(() => {
     signinBox.style.opacity = "1";
@@ -94,4 +94,36 @@ function closesignin() {
   setTimeout(() => {
     signinPopup.style.display = "none";
   }, 200);
+}
+
+const searchBar = document.getElementById("searchBar");
+
+searchBar.addEventListener("keyup", function () {
+  const text = searchBar.value.toLowerCase().trim();
+  const items = document.querySelectorAll(".wap-in");
+
+  items.forEach((item) => {
+    const name = item.querySelector("h5").textContent.toLowerCase();
+
+    if (name.includes(text)) {
+      item.style.display = "inline-block";
+    } else {
+      item.style.display = "none";
+    }
+  });
+});
+
+function bt() {
+  const text = searchBar.value.toLowerCase().trim();
+  const items = document.querySelectorAll(".wap-in");
+
+  items.forEach((item) => {
+    const name = item.querySelector("h5").textContent.toLowerCase();
+
+    if (name.includes(text)) {
+      item.style.display = "inline-block";
+    } else {
+      item.style.display = "none";
+    }
+  });
 }

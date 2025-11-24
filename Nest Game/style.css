@@ -3,10 +3,9 @@
 body {
   margin: auto;
   font-family: "Noto Sans Thai", sans-serif;
-  background:  url("img/art\ pixel\ GIF.gif") no-repeat;
+  background: url("img/art\ pixel\ GIF.gif") no-repeat;
   background-size: cover;
-  background-position: 40%;
-
+  background-attachment: fixed;
 }
 
 /* navbar ตัวแถบค้นหา */
@@ -17,9 +16,12 @@ body {
   height: 7.5rem;
   max-width: auto;
   align-items: center;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   gap: 3rem;
   padding-right: 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
 }
 
 .icon img {
@@ -44,7 +46,7 @@ body {
   text-align: center;
   width: 5rem;
   height: 3.5rem;
-  border: 1px solid #8E90B2;
+  border: 1px solid #8e90b2;
   border-radius: 1rem;
   background-color: antiquewhite;
 }
@@ -61,6 +63,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 100px;
   font-size: 2rem;
+  padding-left: 1.5rem;
 }
 
 .nav-search button {
@@ -116,18 +119,18 @@ body {
   background-color: antiquewhite;
 }
 
-nav li{
+nav li {
   display: inline;
   margin: 30px;
   font-size: 32px;
 }
 
-#navgame{
+#navgame {
   background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
   padding: 12px 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   max-width: 1250px;
   margin: 1rem auto;
   align-items: center;
@@ -147,7 +150,7 @@ nav li{
   gap: 3rem;
 }
 
-.footer-right{
+.footer-right {
   font-size: 25px;
 }
 
@@ -167,14 +170,12 @@ nav li{
 
 .footer-logo {
   width: 300px;
-
 }
 
 .footer-description {
   margin-bottom: 15rem;
   /* line-height: 2rem; */
   font-size: 1.3rem;
-
 }
 
 .footer-copy {
@@ -455,7 +456,7 @@ nav li{
   outline: none;
 }
 
-#loginBox button{
+#loginBox button {
   width: 100%;
   padding: 10px 0;
   margin-top: 10px;
