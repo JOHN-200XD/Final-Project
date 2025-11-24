@@ -3,8 +3,9 @@
 body {
   margin: auto;
   font-family: "Noto Sans Thai", sans-serif;
-  background:  url("img/bg.gif") no-repeat;
+  background:  url("img/art\ pixel\ GIF.gif") no-repeat;
   background-size: cover;
+  background-position: 40%;
 
 }
 
