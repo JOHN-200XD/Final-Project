@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ตะกร้าสินค้า</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .cart-container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item h3 {
+            margin: 0;
+        }
+        .qty-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .total-box {
+            text-align: right;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .checkout-btn {
+            width: 100%;
+            padding: 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="cart-container">
+    <h1>ตะกร้าสินค้า</h1>
+    <div id="cart-items"></div>
+
+    <div class="total-box">
+        รวมทั้งหมด: <span id="total-price">0</span> บาท
+    </div>
+
+    <button class="checkout-btn">ชำระเงิน</button>
+</div>
+
+<script>
+    function getCart() {
+        return JSON.parse(localStorage.getItem("cart")) || [];
+    }
+
+    function saveCart(cart) {
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    function renderCart() {
+        const cart = getCart();
+        const container = document.getElementById("cart-items");
+        const totalPriceEl = document.getElementById("total-price");
+
+        container.innerHTML = "";
+        let total = 0;
+
+        cart.forEach(item => {
+            total += item.price * item.qty;
+
+            const div = document.createElement("div");
+            div.className = "cart-item";
+
+            div.innerHTML = `
+                <div>
+                    <h3>${item.name}</h3>
+                    <p>${item.price} บาท</p>
+                </div>
+                <div class="qty-control">
+                    <button onclick="changeQty('${item.id}', -1)">-</button>
+                    <span>${item.qty}</span>
+                    <button onclick="changeQty('${item.id}', 1)">+</button>
+                    <button onclick="removeItem('${item.id}')" style="color:red;">ลบ</button>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+
+        totalPriceEl.textContent = total.toLocaleString();
+    }
+
+    function changeQty(id, amount) {
+        let cart = getCart();
+        let item = cart.find(i => i.id === id);
+
+        if (!item) return;
+
+        item.qty += amount;
+        if (item.qty <= 0) {
+            cart = cart.filter(i => i.id !== id);
+        }
+
+        saveCart(cart);
+        renderCart();
+    }
+
+    function removeItem(id) {
+        let cart = getCart().filter(i => i.id !== id);
+        saveCart(cart);
+        renderCart();
+    }
+
+    renderCart();
+</script>
+
+</body>
+</html>

@@ -100,17 +100,43 @@ const searchBar = document.getElementById("searchBar");
 
 searchBar.addEventListener("keyup", function () {
   const text = searchBar.value.toLowerCase().trim();
-  const items = document.querySelectorAll(".wap-in");
+  const sections = document.querySelectorAll(".container-1");
+  const slideshow = document.querySelector(".contor");
+  const navbarHeight = document.querySelector(".nav-bar").offsetHeight;
+  let firstMatchSection = null;
 
-  items.forEach((item) => {
-    const name = item.querySelector("h5").textContent.toLowerCase();
+  // hide/show slideshow
+  slideshow.style.display = text === "" ? "block" : "none";
 
-    if (name.includes(text)) {
-      item.style.display = "inline-block";
-    } else {
-      item.style.display = "none";
+  sections.forEach((section) => {
+    const items = section.querySelectorAll(".wap-in");
+    let sectionHasMatch = false;
+
+    items.forEach((item) => {
+      const name = item.querySelector("h5").textContent.toLowerCase();
+      if (name.includes(text)) {
+        item.style.display = "inline-block";
+        sectionHasMatch = true;
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+    section.style.display = sectionHasMatch ? "block" : "none";
+
+    if (sectionHasMatch && !firstMatchSection) {
+      firstMatchSection = section;
     }
   });
+
+  if (firstMatchSection) {
+    const sectionPosition =
+      firstMatchSection.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: sectionPosition - navbarHeight - 10,
+      behavior: "smooth",
+    });
+  }
 });
 
 function bt() {
@@ -128,23 +154,38 @@ function bt() {
   });
 }
 
-
 const PRODUCTS = {
-    "123": {
-        name: "Age of Mythology: Retold",
-        price: 495,
-        originalPrice: 990,
-        discount: "50%"
-    },
+  123: {
+    name: "Age of Mythology: Retold",
+    price: 495,
+    originalPrice: 990,
+    discount: "50%",
+  },
 
-    "124": { 
-        name: "Another Game", 
-        price: 700, 
-        originalPrice: 1000, 
-        discount: "30%" 
-    }
+  124: {
+    name: "Another Game",
+    price: 700,
+    originalPrice: 1000,
+    discount: "30%",
+  },
 };
 
-let shoppingCart = []; 
+let shoppingCart = [];
 
-// -----------------------------------------------------------
+function addToCart(id, name, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let item = cart.find((i) => i.id === id);
+
+  if (item) {
+    item.qty += 1;
+  } else {
+    cart.push({ id, name, price, qty: 1 });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert($, { name }, ถูกเพิ่มลงตะกร้าแล้ว);
+}
+
+function goToCart() {
+  window.location.href = "cart.html"; // ชื่อไฟล์ตะกร้าสินค้า
+}

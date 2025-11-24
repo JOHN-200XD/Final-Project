@@ -1,99 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Mitr:wght@200;300;400;500;600;700&family=Noto+Sans+Thai:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Headline:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap');
 
 body {
-    font-family: "Noto Sans Thai", sans-serif;
-    background-color: rgb(209, 209, 209);
+    font-family: "Prompt", sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-
-
-/* class ของข้อความ */
-.XX{
-    font-size: 21px;
-}
-
-/* เส้นแบ่งระหว่างนโยบาย */
-hr {
-    width: auto;
-    height: 3px;
-    background-color: black;
-}
-
-/* กล่องนโยบาย */
-.all{
-    width: 60%;
-    background-color: white;
-    border-radius: 0.5%;
-    border: solid rgb(105, 105, 105) 5px;
-    margin: auto;
+.img-icon {
     text-align: center;
-    gap: 1px;
-    margin: 0 auto;
-    padding: 20px;
+    margin-top: 40px;
 }
 
-/* h2 header-text {
-    margin-top: 200px;
-} */
-
-/* .h2, .h3 {
-    font-size: 1.5rem;
-} */
-
-
-.xx{
-    text-align: left;
-    font-size: 16px;
-    padding-left: 200px;
-    padding-right: 200px;
+.all {
+    max-width: 750px;
+    background: #ffffff;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
 
-.end{
-    text-align: center;    
+.header-text {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 5px;
 }
 
-a{
-    text-decoration: none;
+h3 {
+    font-weight: 400;
+    line-height: 1.6;
+    color: #555;
 }
 
-img{
-    display: block;
-    margin: auto;
-}
-
-/* button ยอมรับข้อตกลง */
-.end {
-    color: white;
-    background: gray;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 18px;
-    width: fit-content;
-    margin: auto;
+h3.XX {
+    font-weight: 600;
+    font-size: 20px;
     margin-top: 20px;
+}
+
+h3.xx {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 25px 0;
+}
+
+a {
+    color: #111;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #007aff;
+}
+
+.end {
     text-align: center;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
-}
-
-.end:hover {
-    background-color: #555555; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
-    cursor: pointer; /* เปลี่ยนเมาส์เป็นนิ้วไปชี้ */
-}
-
-.end:hover a {
-    color: rgb(0, 0, 0); /* เปลี่ยนสีตัวอักษรตอนเอาเมาส์วาง */
+    margin: 25px 0 10px;
 }
 
 .end a {
-    color: white;
+    display: inline-block;
+    background: #111;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.end a:hover {
+    background: #007aff;
 }
 
 .footer-copy {
-  text-align: center;
-  padding-top: 1.2rem;
-  border-top: 1px solid;
-  margin-top: 1rem;
-  font-size: 1rem;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 30px;
 }
