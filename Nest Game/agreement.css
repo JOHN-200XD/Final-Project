@@ -2,7 +2,7 @@
 
 body {
     font-family: "Noto Sans Thai", sans-serif;
-    background-color: rgb(209, 209, 209);
+    background-color: rgb(255, 255, 255);
 }
 
 /* class ของข้อความ */
@@ -12,17 +12,17 @@ body {
 
 /* เส้นแบ่งระหว่างนโยบาย */
 hr {
-    width: auto;
-    height: 3px;
-    background-color: black;
+    order: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 25px 0;
 }
 
 /* กล่องนโยบาย */
 .all {
     width: 60%;
     background-color: white;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
     border-radius: 0.5%;
-    border: solid rgb(105, 105, 105) 5px;
     margin: auto;
     text-align: center;
     gap: 1px;
@@ -30,15 +30,15 @@ hr {
     padding: 20px;
 }
 
-/* h2 header-text {
-    margin-top: 200px;
-} */
-
-/* .h2, .h3 {
-    font-size: 1.5rem;
-} */
-
+h3 {
+    font-weight: 400;
+    line-height: 1.6;
+    color: #555;
+}
 h4 {
+    font-weight: 400;
+    line-height: 1.6;
+    color: #555;
     text-align: left;
     padding-left: 200px;
     padding-right: 200px;
@@ -60,7 +60,7 @@ img {
 /* button ยอมรับข้อตกลง */
 .end {
     color: white;
-    background: gray;
+    background: rgb(0, 0, 0);
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 8px;
@@ -73,14 +73,14 @@ img {
 }
 
 .end:hover {
-    background-color: #555555;
+    background-color: #007aff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     /* เปลี่ยนเมาส์เป็นนิ้วไปชี้ */
 }
 
 .end:hover a {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     /* เปลี่ยนสีตัวอักษรตอนเอาเมาส์วาง */
 }
 
