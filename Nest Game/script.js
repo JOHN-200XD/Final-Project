@@ -34,7 +34,7 @@ const loginPopup = document.getElementById("loginPopup");
 const loginBox = document.getElementById("loginBox");
 const closeBtn = document.getElementById("closeBtn");
 
-// close popup when clicking "ตกลง" (login submit)
+// close popup when clicking "ตกลง"
 const loginSubmit = document.getElementById("loginSubmit");
 if (loginSubmit) {
   loginSubmit.addEventListener("click", (e) => {
@@ -42,6 +42,16 @@ if (loginSubmit) {
     closeLogin();
   });
 }
+
+// 🔥 เปิด popup อัตโนมัติทุกครั้งที่โหลดหน้าเว็บ
+window.onload = () => {
+  loginPopup.style.display = "flex";
+
+  setTimeout(() => {
+    loginBox.style.opacity = "1";
+    loginBox.style.transform = "translateY(0)";
+  }, 10);
+};
 
 loginIcon.addEventListener("click", () => {
   loginPopup.style.display = "flex";
@@ -51,6 +61,7 @@ loginIcon.addEventListener("click", () => {
     loginBox.style.transform = "translateY(0)";
   }, 10);
 });
+
 closeBtn.addEventListener("click", closeLogin);
 
 loginPopup.addEventListener("click", (e) => {
@@ -65,7 +76,7 @@ function closeLogin() {
     loginPopup.style.display = "none";
   }, 200);
 }
-// sing in phoom
+
 const signinIcon = document.querySelector(".signin");
 const signinPopup = document.getElementById("signinPopup");
 const signinBox = document.getElementById("signinBox");
