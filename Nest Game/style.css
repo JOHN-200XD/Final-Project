@@ -130,7 +130,11 @@ body {
 }
 
 .nav-manu-info nav ul li a:hover {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.06)
+  );
   color: #fff;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
@@ -707,4 +711,92 @@ a {
 
 .close:hover {
   color: red;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-popup {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 350px;
+  height: 100%;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+  transition: 0.3s;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.4);
+  overflow-y: auto;
+}
+
+.cart-popup.active {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cart-items {
+  flex: 1;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-footer {
+  margin-top: 15px;
+}
+
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.clear-btn,
+.checkout-btn {
+  width: 48%;
+  padding: 10px;
+  border: none;
+  background: red;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.checkout-btn {
+  background-color: greenyellow;
 }

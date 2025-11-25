@@ -54,7 +54,7 @@
           <p>ภาษา</p>
         </a>
       </div>
-      <div class="market" onclick="goToCart()"><i class="fa-solid fa-basket-shopping"></i></div>
+      <div class="market" onclick="openCart()"><i class="fa-solid fa-basket-shopping"></i></div>
       <div class="like"><i class="fa-solid fa-heart"></i></div>
       <div class="login"><i class="fa-solid fa-right-to-bracket"></i></div>
     </div>
@@ -97,6 +97,26 @@
       </ul>
     </nav>
   </div>
+  <div id="cartOverlay" class="overlay"></div>
+
+<div id="cartPopup" class="cart-popup">
+  <div class="cart-header">
+    <h3>ตะกร้าสินค้า</h3>
+    <button id="cartClose" class="close-btn">✕</button>
+  </div>
+
+  <div id="cartItems" class="cart-items"></div>
+
+  <div class="cart-footer">
+  <div class="total">
+    รวมทั้งหมด: <span id="cartTotal">0</span> บาท
+  </div>
+  <div class="cart-buttons">
+    <button id="clearCart" class="clear-btn">ลบทั้งหมด</button>
+    <button id="checkoutBtn" class="checkout-btn">ยืนยันซื้อ</button>
+  </div>
+</div>
+</div>
   <!-- games add 1-->
   <section class="container-1" id="solo">
     <div class="header-best-seller">
@@ -111,7 +131,7 @@
       <h5>Age of Mythology: Retold</h5>
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿990</del> ฿495</p>
-        <button class="by" onclick="location.href='g1.html'">BUY</button>
+        <button class="by" onclick="addToCart(123, 'Age of Mythology: Retold', 495)">BUY</button>
         <button class="add"><i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
