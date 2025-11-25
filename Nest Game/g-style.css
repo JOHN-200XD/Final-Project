@@ -50,7 +50,8 @@ body h1 {
     height: 340px;
     display: block;
     margin: auto;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* เงาเข้ม ด้านหลัง */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    /* เงาเข้ม ด้านหลัง */
 }
 
 .in-put-videlo {
@@ -80,6 +81,10 @@ body h1 {
 
 .back:hover {
     background-color: #d9b7f9;
+}
+
+.back:active {
+    background-color: red;
 }
 
 .back a {
@@ -141,4 +146,49 @@ body h1 {
     overflow-x: auto;
     width: 500px;
     height: 400px;
+}
+
+/* Hide popups by default */
+#loginPopup,
+#signinPopup {
+    display: none;
+    /* hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* semi-transparent background */
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginBox,
+#signinBox {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+}
+
+#closeBtn,
+#closepop {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.buy-now:hover {
+    cursor: pointer;
+}
+
+.buy-now:active {
+    background-color: red;
 }

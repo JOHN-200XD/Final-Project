@@ -11,16 +11,23 @@ let num = 0;
 function show() {
   document.getElementById("img").src = pg[num];
 }
+
 function black() {
   num--;
   if (num < 0) num = pg.length - 1;
   show();
 }
+
 function netx() {
   num++;
   if (num >= pg.length) num = 0;
   show();
 }
+
+setInterval(netx, 5000);
+
+show();
+
 // login by mon //
 const loginIcon = document.querySelector(".login");
 const loginPopup = document.getElementById("loginPopup");
@@ -105,7 +112,6 @@ searchBar.addEventListener("keyup", function () {
   const navbarHeight = document.querySelector(".nav-bar").offsetHeight;
   let firstMatchSection = null;
 
-  // hide/show slideshow
   slideshow.style.display = text === "" ? "block" : "none";
 
   sections.forEach((section) => {
@@ -187,7 +193,7 @@ function addToCart(id, name, price) {
 }
 
 function goToCart() {
-  window.location.href = "cart.html"; // ชื่อไฟล์ตะกร้าสินค้า
+  window.location.href = "cart.html";
 }
 
 const logo = document.querySelector(".icon img");
@@ -209,4 +215,23 @@ contactLink.addEventListener("click", (e) => {
     behavior: "smooth",
     block: "start",
   });
+});
+
+document.querySelectorAll('#navgame a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const target = document.querySelector(this.getAttribute('href'));
+
+      const offset = 120;
+
+      const elementPosition = target.getBoundingClientRect().top;
+
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    });
 });

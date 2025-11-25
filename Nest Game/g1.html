@@ -7,9 +7,42 @@
     <title>Nest Games</title>
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="g-style.css">
+    <script src="https://kit.fontawesome.com/4ca85b1d80.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <div id="loginPopup">
+        <div id="loginBox">
+            <span id="closeBtn">&times;</span>
+            <img src="img/icon-re.png" alt="" width="140rem" class="imgin">
+            <h3>เข้าสู่ระบบ</h3>
+            <input type="text" name="usrnamelogin" placeholder="Username" /><br />
+            <input type="password" name="urspwd" placeholder="Password" /><br /><br />
+            <button id="loginSubmit">ตกลง</button>
+            <button class="signin" id="signin">สมัครสมาชิก</button><br />
+            <p><br />เมื่อเข้าสู่ระบบ ถือว่าคุณได้ยอมรับและ<br />รับทราบ <a
+                    href="agreement.html">นโยบายความเป็นส่วนตัว</a>
+                ของ Nest Games แล้ว</p>
+        </div>
+    </div>
+    <!-- phoom sign in -->
+    <div id="signinPopup">
+        <div id="signinBox">
+            <span id="closepop">&times;</span>
+            <img src="img/icon-re.png" alt="" width="140rem" class="imgin">
+            <h3>สมัครสมาชิก</h3>
+            <input type="text" name="usrnamesignin" placeholder="Username" />
+            <input type="text" name="usrlastnamesignin" placeholder="First and Lastname" /><br />
+            <input type="text" name="usrphonesingin" placeholder="Phone number" /><br />
+            <input type="text" name="usrgmailsingin" placeholder="Email" /><br />
+            <input type="password" name="urspwdsingin" placeholder="Password" /><br />
+            <input type="password" name="usrconpwdsingin" placeholder="Confirm Password" /><br /><br />
+            <button id="signinSubmit">ตกลง</button><br />
+            <p><br />เมื่อเข้าสู่ระบบ ถือว่าคุณได้ยอมรับและ<br />รับทราบ <a
+                    href="agreement.html">นโยบายความเป็นส่วนตัว</a>
+                ของ Nest Games แล้ว</p>
+        </div>
+    </div>
     <div class="in-for-g">
         <div class="in-put-g">
             <button class="back" href="index.html"><a href="index.html">หน้าหลัก</a>
@@ -26,7 +59,7 @@
                     <p>-50% OFF</p>
                 </div>
             </div>
-            <button class="buy-now">Buy now</button>
+            <button class="buy-now" id="buyNowBtn">Buy now</button>
         </div>
         <div class="in-put-videlo">
             <div class="in-put-youtobe">

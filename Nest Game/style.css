@@ -100,15 +100,52 @@ body {
   background-color: #8e90b2;
 }
 
-.nav-2 .nav-manu-info {
+.nav-manu-info {
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  padding-right: 3rem;
+  align-items: center;
+  height: 85px;
 }
 
-.nav-2 .nav-manu-info p {
-  font-size: 23px;
+.nav-manu-info nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-manu-info nav ul li a {
+  line-height: 1;
+  display: flex;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #fff;
+
+  background: transparent;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 160ms ease;
+
+  transform-origin: center;
+}
+
+.nav-manu-info nav ul li a:hover {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.nav-manu-info nav ul li a:focus {
+  outline: 3px solid rgba(122, 92, 231, 0.25);
+  outline-offset: 4px;
+}
+
+.nav-manu-info nav ul li a.active,
+.nav-manu-info nav ul li a:active {
+  background: linear-gradient(90deg, #5ce7af 0%, #6c5ce7 100%);
+  color: #0b0b0b;
+  box-shadow: 0 8px 22px rgba(108, 92, 231, 0.18);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .nav-2 .nav-manu {
@@ -133,13 +170,48 @@ nav li {
 
 #navgame {
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 10px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
-  padding: 12px 20px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  max-width: 1250px;
+  max-width: 1500px;
   margin: 1rem auto;
+}
+
+#navgame ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 8px;
   align-items: center;
+}
+
+#navgame ul li a {
+  display: flex;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #000;
+  background: transparent;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 160ms ease;
+}
+
+#navgame ul li a:hover {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.04));
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+#navgame ul li a:focus {
+  outline: 3px solid rgba(122, 92, 231, 0.25);
+  outline-offset: 4px;
+}
+
+#navgame ul li a:active {
+  background: linear-gradient(90deg, #5ce7af 0%, #6c5ce7 100%);
+  color: #0b0b0b;
+  box-shadow: 0 8px 22px rgba(108, 92, 231, 0.18);
+  transform: scale(1.02);
 }
 
 /* ================= FOOTER ================= */
@@ -366,9 +438,9 @@ nav li {
 }
 
 .by:active {
-  color: red;
   background-color: red;
 }
+
 .add {
   background-color: #f0f0f0;
   padding: 10px;
