@@ -336,3 +336,78 @@ function updateCartCount() {
     cartCount.style.display = "none";
   }
 }
+
+// ----------------------------------------------------
+//  SECTION 12: Wishlist System
+// ----------------------------------------------------
+let wishlist = [];
+
+const wishlistOverlay = document.getElementById("wishlistOverlay");
+const wishlistPopup = document.getElementById("wishlistPopup");
+const wishlistClose = document.getElementById("wishlistClose");
+
+// LOAD WISHLIST FROM STORAGE
+function loadWishlist() {
+  const saved = localStorage.getItem("wishlist");
+  if (saved) wishlist = JSON.parse(saved);
+}
+loadWishlist();
+
+function openWishlist() {
+  wishlistOverlay.classList.add("active");
+  wishlistPopup.classList.add("active");
+  updateWishlistUI();
+}
+
+function closeWishlist() {
+  wishlistOverlay.classList.remove("active");
+  wishlistPopup.classList.remove("active");
+}
+
+wishlistOverlay.addEventListener("click", closeWishlist);
+wishlistClose.addEventListener("click", closeWishlist);
+
+function addToWishlist(id, name, price, image) {
+  wishlist.push({ id, name, price });
+
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  updateWishlistUI();
+
+  alert(`${name} ถูกเพิ่มใน Wishlist แล้ว!`);
+}
+
+function updateWishlistUI() {
+  const list = document.getElementById("wishlistItems");
+  list.innerHTML = "";
+
+  wishlist.forEach((item, index) => {
+    list.innerHTML += `
+      <div class="cart-item">
+        <div>
+          <strong>${item.name}</strong><br>
+          <small>${item.price} บาท</small>
+        </div>
+        <button onclick="removeWishlistItem(${index})">ลบ</button>
+      </div>
+    `;
+  });
+}
+
+function removeWishlistItem(index) {
+  wishlist.splice(index, 1);
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  updateWishlistUI();
+}
+
+// Every .add button
+document.querySelectorAll(".add").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const item = btn.closest(".wap-in");
+
+    const name = item.querySelector("h5").textContent;
+    const price = parseInt(item.querySelector(".p1").textContent);
+    const image = item.querySelector("img")?.src || "";
+
+    addToWishlist(Date.now(), name, price, image);
+  });
+});

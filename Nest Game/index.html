@@ -44,21 +44,16 @@
   </div>
   <!-- john nav -->
   <div class="nav-bar">
-    <div class="icon"><img src="img/icon-re.png" alt="" / id="logo"></div>
+    <div class="icon"><img src="img/icon-re.png" alt="" id="logo"></div>
     <div class="nav-search">
       <input type="text" name="" id="searchBar" placeholder="ค้นหา" />
     </div>
-    <div class="icon-gop">
-      <div class="lang">
-        <a href="">
-          <p>ภาษา</p>
-        </a>
-      </div>
+    <div class="icon-gop"> 
       <div class="market" onclick="openCart()">
         <i class="fa-solid fa-basket-shopping"></i>
         <span id="cartCount" class="cart-count">0</span>
       </div>
-      <div class="like"><i class="fa-solid fa-heart"></i></div>
+      <div class="like" onclick="openWishlist()"><i class="fa-solid fa-heart"></i></div>
       <div class="login"><i class="fa-solid fa-right-to-bracket"></i></div>
     </div>
   </div>
@@ -100,6 +95,7 @@
       </ul>
     </nav>
   </div>
+
   <div id="cartOverlay" class="overlay"></div>
 
 <div id="cartPopup" class="cart-popup">
@@ -111,14 +107,24 @@
   <div id="cartItems" class="cart-items"></div>
 
   <div class="cart-footer">
-  <div class="total">
-    รวมทั้งหมด: <span id="cartTotal">0</span> บาท
-  </div>
-  <div class="cart-buttons">
-    <button id="clearCart" class="clear-btn">ลบทั้งหมด</button>
-    <button id="checkoutBtn" class="checkout-btn">ยืนยันซื้อ</button>
+    <div class="total">
+      รวมทั้งหมด: <span id="cartTotal">0</span> บาท
+    </div>
+    <div class="cart-buttons">
+      <button id="clearCart" class="clear-btn">ลบทั้งหมด</button>
+      <button id="checkoutBtn" class="checkout-btn">ยืนยันซื้อ</button>
+    </div>
   </div>
 </div>
+
+<div id="wishlistOverlay" class="overlay"></div>
+
+<div id="wishlistPopup" class="cart-popup">
+  <h2>Wishlist</h2>
+  <div id="wishlistItems"></div>
+  <button id="wishlistClose">ปิด</button>
+</div>
+
 </div>
   <!-- games add 1-->
   <section class="container-1" id="solo">
@@ -135,7 +141,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿990</del> ฿495</p>
         <button class="by" onclick="addToCart(1, 'Age of Mythology: Retold', 495)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(1, 'Age of Mythology: Retold', 495)"><i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
     <div class="wap-in">
@@ -148,7 +154,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿1,799</del> ฿899.50</p>
         <button class="by" onclick="addToCart(2, 'Black Myth Wukong', 899.50)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(2, 'Black Myth Wukong', 899.50)"><i class="fa-solid fa-heart"></i></button>
         <div class="ovrlay">
         </div>
       </div>
@@ -163,7 +169,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿219</del> ฿109.50</p>
         <button class="by" onclick="addToCart(3, 'Garry\'s Mod', 109.50)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(3, 'Garry\'s Mod', 109.50)"><i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
   </section>
@@ -182,7 +188,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿399</del> ฿199.50</p>
         <button class="by" onclick="addToCart(4, 'Dead By Daylight', 199.50)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(4, 'Dead By Daylight', 199.50)"><i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
     <div class="wap-in">
@@ -195,7 +201,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿159</del> ฿79.50</p>
         <button class="by" onclick="addToCart(5, 'PEAK', 79.50)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(5, 'PEAK', 79.50)"><i class="fa-solid fa-heart"></i></button>
         <div class="ovrlay">
         </div>
       </div>
@@ -210,7 +216,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿1,899</del> ฿949.50</p>
         <button class="by" onclick="addToCart(6, 'Forza Horizon 5', 949.50)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(6, 'Forza Horizon 5', 949.50)"><i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
   </section>
@@ -231,7 +237,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿1,423.62</del> ฿711.50</p>
         <button class="by" onclick="addToCart(7, 'Kingdom Come: Deliverance II', 711.50)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(7, 'Kingdom Come: Deliverance II', 711.50)"><i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
     <div class="wap-in">
@@ -246,7 +252,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿1,149</del> ฿574.50</p>
         <button class="by" onclick="addToCart(8, 'Solo Leveling: ARISE OVERDRIVE', 574.50)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(8, 'Solo Leveling: ARISE OVERDRIVE', 574.50)"><i class="fa-solid fa-heart"></i></button>
         <div class="ovrlay">
         </div>
       </div>
@@ -261,7 +267,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿1,990</del> ฿999.50</p>
         <button class="by" onclick="addToCart(9, 'EA SPORTS FC™ 26', 999.50)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(9, 'EA SPORTS FC™ 26', 999.50)"><i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
   </section>
@@ -280,7 +286,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿1,699</del> ฿849.50</p>
         <button class="by" onclick="addToCart(10, 'Anno 117: Pax Romana', 849.50)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(10, 'Anno 117: Pax Romana', 849.50)"><i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
     <div class="wap-in">
@@ -293,7 +299,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿1,199</del> ฿599.50</p>
         <button class="by" onclick="addToCart(11, 'Planet Zoo', 599.50)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(11, 'Planet Zoo', 599.50)"><i class="fa-solid fa-heart"></i></button>
         <div class="ovrlay">
         </div>
       </div>
@@ -308,7 +314,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿1,200</del> ฿600</p>
         <button class="by" onclick="addToCart(12, 'Planet Coaster 2', 600)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(12, 'Planet Coaster 2', 600)"><i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
   </section>
@@ -329,7 +335,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿1,976</del> ฿988</p>
         <button class="by" onclick="addToCart(13, 'FC26 5,900 FUT', 988)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(13, 'FC26 5,900 FUT', 988)"><i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
     <div class="wap-in">
@@ -344,7 +350,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿607</del> ฿303.50</p>
         <button class="by" onclick="addToCart(14, 'Crystal pack 2,100 Crystals', 303.50)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(14, 'Crystal pack 2,100 Crystals', 303.50)"><i class="fa-solid fa-heart"></i></button>
         <div class="ovrlay">
         </div>
       </div>
@@ -361,7 +367,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿642</del> ฿321</p>
         <button class="by" onclick="addToCart(15, 'NBA2K18 75,000 VC', 321)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(15, 'NBA2K18 75,000 VC', 321)"><i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
     </div>
@@ -384,7 +390,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿500</del> ฿250</p>
         <button class="by" onclick="addToCart(16, '1,000 Robux', 250)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(16, '1,000 Robux', 250)"><i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
     <div class="wap-in">
@@ -399,7 +405,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿1,000</del> ฿500</p>
         <button class="by" onclick="addToCart(17, '2,000 Robux', 1000)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(17, '2,000 Robux', 1000)"><i class="fa-solid fa-heart"></i></button>
         <div class="ovrlay">
         </div>
       </div>
@@ -416,7 +422,7 @@
       <div class="it">
         <p><span class="discount">-50%</span> <del>฿1,750</del> ฿875</p>
         <button class="by" onclick="addToCart(18, '4,500 Robux', 875)">BUY</button>
-        <button class="add"><i class="fa-solid fa-heart"></i></button>
+        <button class="add" onclick="addToWishlist(18, '4,500 Robux', 875)"><i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
     </div>
