@@ -207,22 +207,10 @@ clearCartBtn.addEventListener("click", () => {
   updateCartUI();
 });
 
-function addToCart(id, name, price) {
-  shoppingCart.push({ id, name, price });
-  saveCart();
-  openCart();
-}
-
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(shoppingCart));
 }
 
-function loadCart() {
-  const saved = localStorage.getItem("cart");
-  if (saved) shoppingCart = JSON.parse(saved);
-}
-
-loadCart();
 updateCartUI();
 
 function updateCartUI() {
@@ -295,38 +283,7 @@ function loadCart() {
 loadCart();
 
 // ----------------------------------------------------
-//  SECTION 9: User Registration
-// ----------------------------------------------------
-function registerUser() {
-  const username = document.querySelector('input[name="usrnamesignin"]').value;
-  const password = document.querySelector('input[name="urspwdsingin"]').value;
-
-  if (!username || !password) {
-    alert("กรุณากรอกชื่อผู้ใช้และรหัสผ่าน");
-    return;
-  }
-
-  const users = JSON.parse(localStorage.getItem("users") || "{}");
-
-  if (users[username]) {
-    alert("ชื่อผู้ใช้นี้ถูกใช้แล้ว");
-    return;
-  }
-
-  users[username] = { password };
-  localStorage.setItem("users", JSON.stringify(users));
-
-  alert("สมัครสมาชิกเรียบร้อย!");
-  closesignin();
-
-  signinSubmit.addEventListener("click", (e) => {
-    e.preventDefault();
-    registerUser();
-  });
-}
-
-// ----------------------------------------------------
-//  SECTION 10: Checkout
+//  SECTION 9: Checkout
 // ----------------------------------------------------
 const checkoutBtn = document.getElementById("checkoutBtn");
 
@@ -345,4 +302,16 @@ checkoutBtn.addEventListener("click", () => {
   saveCart();
   updateCartUI();
   closeCart();
+});
+
+// ----------------------------------------------------
+//  SECTION 10: Logo Scroll To Top
+// ----------------------------------------------------
+const logo = document.getElementById("logo");
+
+logo.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });
