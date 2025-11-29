@@ -205,6 +205,7 @@ clearCartBtn.addEventListener("click", () => {
   shoppingCart = [];
   saveCart();
   updateCartUI();
+  updateCartCount();
 });
 
 function saveCart() {
@@ -237,6 +238,7 @@ function removeCartItem(index) {
   shoppingCart.splice(index, 1);
   saveCart();
   updateCartUI();
+  updateCartCount();
 }
 
 // ----------------------------------------------------
@@ -271,7 +273,9 @@ document.querySelectorAll("#navgame a").forEach((link) => {
 // ----------------------------------------------------
 function addToCart(id, name, price) {
   shoppingCart.push({ id, name, price });
-  localStorage.setItem("cart", JSON.stringify(shoppingCart));
+  saveCart();
+  updateCartUI();
+  updateCartCount();
   alert(name + " ถูกเพิ่มเข้าตะกร้าแล้ว!");
 }
 
@@ -281,6 +285,7 @@ function loadCart() {
 }
 
 loadCart();
+updateCartCount();
 
 // ----------------------------------------------------
 //  SECTION 9: Checkout
@@ -301,6 +306,7 @@ checkoutBtn.addEventListener("click", () => {
   shoppingCart = [];
   saveCart();
   updateCartUI();
+  updateCartCount();
   closeCart();
 });
 
@@ -315,3 +321,18 @@ logo.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+// ----------------------------------------------------
+//  SECTION 11: Update Cart Indicator
+// ----------------------------------------------------
+function updateCartCount() {
+  const count = shoppingCart.length;
+  const cartCount = document.getElementById("cartCount");
+
+  if (count > 0) {
+    cartCount.style.display = "inline-block";
+    cartCount.textContent = count;
+  } else {
+    cartCount.style.display = "none";
+  }
+}

@@ -662,6 +662,10 @@ a {
   cursor: pointer;
 }
 
+.market {
+  position: relative;
+}
+
 .market:hover {
   transform: scale(1.1);
   cursor: pointer;
@@ -799,4 +803,17 @@ a {
 
 .checkout-btn {
   background-color: greenyellow;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  padding: 2px 6px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: bold;
+  display: none; /* ซ่อนไว้ก่อน ถ้า 0 */
 }
