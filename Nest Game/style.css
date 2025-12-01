@@ -378,38 +378,36 @@ nav li {
 }
 
 .wap-in h5 {
-  margin-top: 0;
+  margin-top: 0.7rem;
+  margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }
 
 .pen {
   margin: 0 auto;
   position: relative;
+  background-color: #000000;
+  border-radius: 1rem 1rem 0rem 0rem;
+  transform: scale(1.02);
+  height: 24rem;
+  width: 283px; 
+  overflow: hidden;
+  transition:  0.3s ease;  
+  
 }
 
 .pen img {
+  display: inline;
+  height: 25rem;
   width: 100%;
-  height: auto;
-  object-fit: cover;
   border-radius: 1rem 1rem 0rem 0rem;
+  opacity: 0.8;
 }
-
-.pen .ovrlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #000000;
-  transition: 0.8ms ease;
-  border-radius: 1rem 1rem 0rem 0rem;
-  opacity: 0.2;
-}
-
-.pen .ovrlay:hover {
-  opacity: 0;
+.pen img:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  opacity: 1;
+  
 }
 
 .by {
