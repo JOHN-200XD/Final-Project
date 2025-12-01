@@ -91,12 +91,13 @@ body {
   display: flex;
   align-items: center;
   height: 85px;
+  
 }
 
 .nav-manu-info nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: auto;
+  padding: auto;
   display: flex;
   align-items: center;
 }
